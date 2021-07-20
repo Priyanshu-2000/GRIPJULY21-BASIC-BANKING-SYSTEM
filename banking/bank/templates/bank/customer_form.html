@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content%}
+
+  <h1>New Customer</h1>
+  <div class="form-class">
+
+
+  <form  method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      {{form.as_p}}
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+
+  </form>
+  </div>
+
+{% endblock %}

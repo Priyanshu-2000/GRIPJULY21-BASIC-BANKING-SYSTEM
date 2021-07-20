@@ -1,0 +1,46 @@
+h1{
+  margin-top: 40px;
+  text-align: center;
+  /* color: white; */
+}
+body{
+  /* background-image: url(https://lh3.googleusercontent.com/proxy/QsM5gTjknhMSBnAEkjHt3f0ECd03GCOItubxEM0ekXbzwC8MGHpuPMViW2-6TvB2G63uJgQMABzOnRBP5gkyctB4-Wc8djOAa6NJqTrjaR5TxCfrjELlw4XTgbAew45ZudhH); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://i.pinimg.com/originals/8c/9d/9b/8c9d9bccf9abd19710f69401910801ff.jpg);
+
+  /* text-decoration-color:white; */
+}
+table{
+  text-align: center;
+  border-style: solid;
+  border-width: medium;
+  margin: auto;
+  margin-top: 50px;
+
+}
+th,td{
+  border: thin solid;
+  padding: 10px;
+}
+tr:hover{background-color: black;
+  color: white;
+}
+
+.form-class{
+  margin-left: 540px;
+  margin-top: 50px;
+}
+.t-class{
+
+  margin-top: 90px;
+  text-align: center;
+
+}
+label{
+  font-size: 20px;
+}
+img{
+  margin-left: 380px;
+  margin-top: 80px;
+}

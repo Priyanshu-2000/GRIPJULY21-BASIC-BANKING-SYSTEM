@@ -1,0 +1,59 @@
+{% extends 'bank/base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+   {% endif %}
+    <h1>Transfer Money</h1>
+    <form action="{% url 'transaction' %}" method="POST" class="t-class">
+      {% csrf_token %}
+      <label for="s_acc">Select sender details</label>
+      <select  name="s_acc"  required>
+        <option value="select">Select</option>
+        {% for cust in customer %}
+          <option value="{{cust.account_number}}">{{cust.name}}( {{cust.balance}} )</option>
+        {% endfor %}
+
+      </select>
+      <br>
+      <br>
+
+      <label for="amt">Enter amount</label>
+      <input type="number" name="amt" required>
+      <br>
+      <br>
+
+      <label for="r_acc">Select receiver details</label>
+      <select  name="r_acc" required>
+        <option value="select">Select</option>
+        {% for cust in customer %}
+          <option value="{{cust.account_number}}">{{cust.name}}( {{cust.balance}} )</option>
+        {% endfor %}
+
+      </select>
+      <br>
+
+      <input class="btn btn-primary" type="submit" value="TRANSFER">
+
+    </form>
+
+
+
+    <!-- {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %} -->
+
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'bank/base.html' %}
+
+{% block content %}
+<div class="container">
+
+
+
+<h1>TRANSFER LIST</h1>
+{% if messages %}
+ {% for message in messages %}
+    <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+{% endif %}
+<table>
+  <tr>
+    <th>Sender Name</th>
+    <th>Receiver Name</th>
+    <th>Amount</th>
+    <th>Date</th>
+
+  </tr>
+  {% for transaction in transaction_list %}
+
+    <tr>
+      <td>{{transaction.sender_name}}</td>
+      <td>{{transaction.receiver_name}}</td>
+      <td>{{transaction.amount}}</td>
+      <td>{{transaction.date}}</td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+
+
+{% endblock %}

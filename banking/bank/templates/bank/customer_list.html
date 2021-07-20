@@ -1,0 +1,25 @@
+{% extends 'bank/base.html' %}
+
+{% block content %}
+
+      <h1>CUSTOMERS</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Account<br>Number</th>
+          <th>Balance</th>
+          <th>Phone <br> Number</th>
+        </tr>
+        {% for cust in customer_list %}
+        <tr>
+          <td>{{cust.name}}</td>
+          <td>{{cust.account_number}}</td>
+          <td>{{cust.balance}}</td>
+          <td>{{cust.phone_number}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+
+
+{% endblock %}
